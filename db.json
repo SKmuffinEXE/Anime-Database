@@ -1,0 +1,13 @@
+{
+
+    Anime: [
+    { name: “Dragonball Z”, 
+    genre: “Shounen”, 
+    release date: 1989, 
+    episodes: 291,  
+    rating: 0, 
+    characters: [‘Son Goku’, ‘Son Gohan’, ‘Vegeta Vegeta’]
+    }
+
+]
+}
