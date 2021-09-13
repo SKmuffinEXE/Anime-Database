@@ -1,13 +1,24 @@
 {
-
-    Anime: [
-    { name: “Dragonball Z”, 
-    genre: “Shounen”, 
-    release date: 1989, 
-    episodes: 291,  
-    rating: 0, 
-    characters: [‘Son Goku’, ‘Son Gohan’, ‘Vegeta Vegeta’]
+    "Anime": [
+    { 
+        "id": 1,
+        "name": "Dragonball Z",
+        "genre": "Shounen", 
+        "release date": 1989, 
+        "episodes": 291,  
+        "rating": 0, 
+        "description": "Five years after winning the World Martial Arts tournament, Gokuu is now living a peaceful life with his wife and son. This changes, however, with the arrival of a mysterious enemy named Raditz who presents himself as Gokuu's long-lost brother. He reveals that Gokuu is a warrior from the once powerful but now virtually extinct Saiyan race, whose homeworld was completely annihilated. When he was sent to Earth as a baby, Gokuu's sole purpose was to conquer and destroy the planet; but after suffering amnesia from a head injury, his violent and savage nature changed, and instead was raised as a kind and well-mannered boy, now fighting to protect others.",
+        "characters": {"name": "Son Goku", "image": "./image/Goku"}, {"name": "Vegeta IV", "image": "./image/Vegeta"}, {"name": "Son Gohan", "image": "./image/gohan"},
+    },
+    { 
+        "id": 2,
+        "name" : "Jojo's Bizarre Adventure: Diamond is Unbreakable",
+        "genre": "Shounen", 
+        "release date": 2016, 
+        "episodes": 39,  
+        "rating": 0, 
+        "description": "The year is 1999. Morioh, a normally quiet and peaceful town, has recently become a hotbed of strange activity. Aided by the power of Stands, four men will encounter danger at every street corner, as it is up to them to unravel the town's secrets, before another occurs.",
+        "characters": {"name": "Jousuke Higashikata", "image": "./image/Jousuke"}, {"name": "Joutarou Kuujou", "image": "./image/joutaro"}, {"name": "Rohan Kishibe", "image": "./image/rohan"},
     }
-
 ]
 }
