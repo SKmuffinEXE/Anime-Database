@@ -9,8 +9,6 @@ function getAnime(){
 
 //make render function
 function renderAnime(animeData){
-
-    // console.log(animeData)
     const guide = document.getElementById('anime-container')
     const animeShow = document.createElement('div')
 
@@ -18,14 +16,28 @@ function renderAnime(animeData){
     const splashImage = document.createElement('img')
     splashImage.src = animeData.image
     splashImage.alt = animeData.name
-    const title = document.createElement('h2')
+    const title = document.createElement('h3')
     title.textContent = animeData.name
 
     animeShow.append(splashImage, title)
     guide.append(animeShow)
 
+//add click event listener
+//function () { moreDetails(animeData)} is a reference that is invoked only when click event occurs
+    animeShow.addEventListener('click', function (){moreDetails(animeData)})
 }
 
+function moreDetails(animeData) {
+ 
+    const detGenre = document.getElementById('genre')
+    detGenre.innerText = animeData.genre
+
+    const detRelease = document.getElementById('release-date')
+    detRelease.innerText = animeData.releaseDate
+
+    
+
+}
 
 
 //Put at bottom,  DOMContentLoaded after HTML/CSS skeleton has been created and other JS functions work (Domcontentloaded acts like init() function)
