@@ -65,8 +65,11 @@ function renderCharacters(character){
 
 }
 
+//Add event listener for rating system
+document.getElementById('starRating').addEventListener('submit', function() {showRating(animeData)})
 
-function showRating(ratings) {
+function showRating(ratings, event) {
+ event.preventDefault()
  let oneStars =  +ratings.one 
  let twoStars = +ratings.two *2
  let threeStars = +ratings.three*3
@@ -77,7 +80,6 @@ function showRating(ratings) {
 
  let averageRating = (oneStars + twoStars + threeStars + fourStars + fiveStars)/totalRatings
  return averageRating
- 
 }
 
 
