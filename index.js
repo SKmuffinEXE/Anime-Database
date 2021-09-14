@@ -66,10 +66,13 @@ function renderCharacters(character){
 }
 
 //Add event listener for rating system
-document.getElementById('starRating').addEventListener('submit', function() {showRating(animeData)})
+const stars = document.getElementById("starRating")
+stars.addEventListener('submit', function(){showRating(ratings)})
 
 function showRating(ratings, event) {
  event.preventDefault()
+console.log("test")
+
  let oneStars =  +ratings.one 
  let twoStars = +ratings.two *2
  let threeStars = +ratings.three*3
