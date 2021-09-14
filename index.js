@@ -30,6 +30,7 @@ function renderAnime(animeData){
 function moreDetails(animeData) {
     const title = document.getElementById('title')
     title.innerText = animeData.name
+
     //commented out for the current state of code
     // const img = document.getElementById('splash')
     // img.src = animeData.image
