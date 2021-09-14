@@ -4,14 +4,25 @@ const BASE_URL = "http://localhost:3000/Anime"
 function getAnime(){
     fetch(BASE_URL)
     .then(resp => resp.json())
-    .then(animeData => animeData.forEach(console.log("testtts")))
+    .then(animeData => animeData.forEach((anime) => {renderAnime(anime)}))
 }
-//      AnimeData => renderAnime(animeData)))
-//     {console.log("testssss")}
-// }
 
 //make render function
-function renderAnime(){
+function renderAnime(animeData){
+
+    // console.log(animeData)
+    const guide = document.getElementById('anime-container')
+    const animeShow = document.createElement('div')
+
+    //image
+    const splashImage = document.createElement('img')
+    splashImage.src = animeData.image
+    splashImage.alt = animeData.name
+    const title = document.createElement('h2')
+    title.textContent = animeData.name
+
+    animeShow.append(splashImage, title)
+    guide.append(animeShow)
 
 }
 
