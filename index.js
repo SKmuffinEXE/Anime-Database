@@ -29,16 +29,44 @@ function renderAnime(animeData){
 
 function moreDetails(animeData) {
  
+    const title = document.getElementById('title')
+    title.innerText = animeData.name
+
+    //commented out for the current state of code
+    // const img = document.getElementById('splash')
+    // img.src = animeData.image
+
+
     const detGenre = document.getElementById('genre')
-    detGenre.innerText = animeData.genre
+    detGenre.innerText = `Genre: ${animeData.genre}`
+
+    const episodes = document.getElementById('episodes')
+    episodes.innerText = `Episodes: ${animeData.episodes}`
 
     const detRelease = document.getElementById('release-date')
     detRelease.innerText = animeData.releaseDate
 
-    
+    const description = document.getElementById('description')
+    description.innerText = animeData.description
+
+    //foreach for the characters
+
+    animeData.characters.forEach(character =>renderCharacters(character))
 
 }
 
+function renderCharacters(character){
+    const container = document.getElementById("characters")
+    
+    //make image tag, link to key, append to container
+    const charImg = document.createElement('img')
+    charImg.src = character.image
+
+    const charName = document.createElement('p')
+    charName.innerText = character.name
+
+    container.append(charImg, charName)
+}
 
 //Put at bottom,  DOMContentLoaded after HTML/CSS skeleton has been created and other JS functions work (Domcontentloaded acts like init() function)
 document.addEventListener("DOMContentLoaded", function(){
