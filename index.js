@@ -1,5 +1,5 @@
 const BASE_URL = "http://localhost:3000/Anime"
-let i = 0;
+let i = 1;
 
 
 //make initial fetch function
@@ -60,27 +60,53 @@ function moreDetails(animeData) {
 function renderCharacters(character){
     const container = document.getElementById("characters")
     
-    //make image tag, link to key, append to container
-    const charImg = document.createElement('img')
-    charImg.src = character.image
-
-    const charName = document.createElement('p')
-    charName.innerText = character.name
-
-
-
-    //console.log(characters[0])
     
+    //make image tag, link to key, append to container
+    if(charDiv.dataset.number != i){
+        const charDiv = document.createElement('div')
+        charDiv.setAttribute('data-number', i)
+    
+        const charImg = document.createElement('img')
+        charImg.src = character.image
+    
+        const charName = document.createElement('p')
+        charName.innerText = character.name
+        
+        charDiv.append(charImg, charName)
+    }
 
-    do {
-        i = i + 1;
-        console.log(i)      
+    //reference code
+    // const charDiv = document.createElement('div')
+    // charDiv.setAttribute('data-number', i)
 
-        //container.append(charImg, charName)
-    }  while (character.length <= i )
- 
+    // const charImg = document.createElement('img')
+    // charImg.src = character.image
 
-    //container.append(charImg, charName)
+    // const charName = document.createElement('p')
+    // charName.innerText = character.name
+    
+    // charDiv.append(charImg, charName)
+
+    // console.log(charDiv.dataset.number)
+
+    // let i = 0
+
+    // console.log(i)
+    ++i
+    if (i > 3) {
+        i = 1
+    }
+    // console.log(`after plus:${i}`)
+    //console.log(characters[0])
+    // if(i<4){
+    //     console.log(i)
+    //     container.append(charImg, charName)
+    // }
+
+    container.append(charDiv)
+
+    //characters are appended several times
+
 }
 
 //Put at bottom,  DOMContentLoaded after HTML/CSS skeleton has been created and other JS functions work (Domcontentloaded acts like init() function)
