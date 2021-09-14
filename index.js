@@ -1,4 +1,6 @@
 const BASE_URL = "http://localhost:3000/Anime"
+let i = 0;
+
 
 //make initial fetch function
 function getAnime(){
@@ -49,7 +51,7 @@ function moreDetails(animeData) {
     const description = document.getElementById('description')
     description.innerText = animeData.description
 
-    //foreach for the characters
+    //foreach for to iterate through each character
 
     animeData.characters.forEach(character =>renderCharacters(character))
 
@@ -65,7 +67,20 @@ function renderCharacters(character){
     const charName = document.createElement('p')
     charName.innerText = character.name
 
-    container.append(charImg, charName)
+
+
+    //console.log(characters[0])
+    
+
+    do {
+        i = i + 1;
+        console.log(i)      
+
+        //container.append(charImg, charName)
+    }  while (character.length <= i )
+ 
+
+    //container.append(charImg, charName)
 }
 
 //Put at bottom,  DOMContentLoaded after HTML/CSS skeleton has been created and other JS functions work (Domcontentloaded acts like init() function)
