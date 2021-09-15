@@ -53,16 +53,11 @@ function moreDetails(animeData) {
     // console.log(showRating(animeData.ratings))
 
     // let stars = document.getElementById('starRating')
-    console.log(animeData)
-    stars.addEventListener('submit', (event) =>
-    {
-        event.preventDefault()  
-        testSubmit(animeData)
-    })
+    //console.log(animeData)
+    stars.addEventListener('submit', (event) => submitRating(animeData, event))
 
     //foreach for to iterate through each character
     animeData.characters.forEach(character =>renderCharacters(character))
-
 }
 
 function renderCharacters(character){
@@ -76,7 +71,6 @@ function renderCharacters(character){
     if (i > 3) {
         i = 1
     }
-
 }
 
 //Add event listener for rating system
@@ -84,15 +78,25 @@ function renderCharacters(character){
 // let stars = document.getElementById('starRating')
 // stars.addEventListener('submit', () => showRating())
 
-function testSubmit(event, animeData){
-    // event.preventDefault()
-    console.log(animeData)
-}
 
-function showRating(ratings, event) {
-//  event.preventDefault()
-// console.log("test")
+    function submitRating(animeData, event){
+        event.preventDefault()  
+        console.log(animeData)
 
+        // /${animeData.id}
+        // `${BASE_URL}`
+        fetch(`${BASE_URL}/${animeData.id}`, {method: 'PATCH',
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify(animeData),
+            })
+            .then(resp => resp.json())
+            .then((console.log("TESSTTTT")))
+        }  
+          
+
+function showRating(ratings) {
  let oneStars =  +ratings.one 
  let twoStars = +ratings.two *2
  let threeStars = +ratings.three*3
@@ -101,17 +105,14 @@ function showRating(ratings, event) {
 
  let totalRatings = +ratings.one + +ratings.two + +ratings.three + +ratings.four + +ratings.five
 
- let averageRating = (oneStars + twoStars + threeStars + fourStars + fiveStars)/totalRatings
+ let averageRating = ((oneStars + twoStars + threeStars + fourStars + fiveStars)/totalRatings)
  return averageRating
 }
 
-
 //Put at bottom,  DOMContentLoaded after HTML/CSS skeleton has been created and other JS functions work (Domcontentloaded acts like init() function)
 document.addEventListener("DOMContentLoaded", function(){
-
     //temp!!!!!
     // showRating(testObj)
-    
     getAnime()
     
 })
