@@ -81,10 +81,24 @@ function renderCharacters(character){
 
     function submitRating(animeData, event){
         event.preventDefault()  
-        console.log(animeData)
+        console.log(animeData.ratings)
 
-        // /${animeData.id}
-        // `${BASE_URL}`
+        //update information
+        let ratings = animeData.ratings
+
+        //let ratings be the object containing the shows ratings
+        //increment a rating by 1 depending on user input
+        let result = +event.target.star1.value
+        if(result === 1){++ratings.one}
+        if(result === 2){++ratings.two}
+        if(result === 3){++ratings.three}
+        if(result === 4){++ratings.four}
+        if(result === 5){++ratings.five}
+
+        console.log(animeData.ratings)
+        // debugger
+
+        //send information to server
         fetch(`${BASE_URL}/${animeData.id}`, {method: 'PATCH',
             headers: {
                 'Content-type': 'application/json',
@@ -92,7 +106,10 @@ function renderCharacters(character){
             body: JSON.stringify(animeData),
             })
             .then(resp => resp.json())
-            .then((console.log("TESSTTTT")))
+            .then((console.log("SUCCESS!")))
+
+        //update DOM again here
+        moreDetails(animeData)
         }  
           
 
