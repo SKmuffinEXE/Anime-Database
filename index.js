@@ -58,11 +58,12 @@ function moreDetails(animeData) {
 
     //boolean in global scope, set to false, when dom loads, it's automatically false
     //if false, add event listner, and set boolean true
-    if(singlePass === false){
-        stars.addEventListener('submit', (event) => submitRating(animeData, event))
-        singlePass = true
-        
-    }
+    stars.myParam = animeData
+    // if(singlePass === false){
+    //     stars.addEventListener('submit', (event) => submitRating(event))
+    //     singlePass = true
+    // }
+
     
 
     //foreach for to iterate through each character
@@ -88,21 +89,23 @@ function renderCharacters(character){
 // stars.addEventListener('submit', () => showRating())
 
 
-    function submitRating(animeData, event){
+    function submitRating(event){
         event.preventDefault()  
        // console.log(animeData.ratings)
 
         //update information
-        let ratings = animeData.ratings
+        // let ratings = animeData.ratings
+        let anime = event.target.myParam
 
         //let ratings be the object containing the shows ratings
         //increment a rating by 1 depending on user input
         let result = +event.target.star1.value
-        if(result === 1){ratings.one += 1} 
-        if(result === 2){ratings.two += 1}
-        if(result === 3){ratings.three += 1}
-        if(result === 4){ratings.four += 1}
-        if(result === 5){ratings.five += 1} 
+        if(result === 1){anime.ratings.one += 1} 
+        if(result === 2){anime.ratings.two += 1}
+        if(result === 3){anime.ratings.three += 1}
+        if(result === 4){anime.ratings.four += 1}
+        if(result === 5){anime.ratings.five += 1} 
+        console.log(event.target.myParam)
 
         //console.log(animeData.ratings)
         // debugger
@@ -118,8 +121,8 @@ function renderCharacters(character){
         //     .then()
 
         // //update DOM again here
-        console.log(animeData)
-        console.log(animeData.ratings)
+        // console.log(animeData)
+        console.log(anime.ratings)
         // moreDetails(animeData)
         }  
           
@@ -142,5 +145,6 @@ document.addEventListener("DOMContentLoaded", function(){
     //temp!!!!!
     // showRating(testObj)
     getAnime()
+    stars.addEventListener('submit', (event) => submitRating(event))
     
 })
