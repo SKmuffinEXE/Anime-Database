@@ -59,13 +59,11 @@ function moreDetails(animeData) {
     //boolean in global scope, set to false, when dom loads, it's automatically false
     //if false, add event listner, and set boolean true
     stars.myParam = animeData
-    // if(singlePass === false){
-    //     stars.addEventListener('submit', (event) => submitRating(event))
-    //     singlePass = true
-    // }
+    const enableButton = document.getElementById("disabled")
+    enableButton.disabled = false
 
-    
-
+    const whichShow = document.getElementById('whichShow')
+    whichShow.textContent = `What would you like to rate ${animeData.name}?`
     //foreach for to iterate through each character
     animeData.characters.forEach(character =>renderCharacters(character))
 }
@@ -105,25 +103,25 @@ function renderCharacters(character){
         if(result === 3){anime.ratings.three += 1}
         if(result === 4){anime.ratings.four += 1}
         if(result === 5){anime.ratings.five += 1} 
-        console.log(event.target.myParam)
+        // console.log(event.target.myParam)
 
         //console.log(animeData.ratings)
         // debugger
 
         //send information to server
-        // fetch(`${BASE_URL}/${animeData.id}`, {method: 'PATCH',
-        //     headers: {
-        //         'Content-type': 'application/json',
-        //     },
-        //     body: JSON.stringify(animeData),
-        //     })
-        //     .then(resp => resp.json())
-        //     .then()
+        fetch(`${BASE_URL}/${anime.id}`, {method: 'PATCH',
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify({ratings: anime.ratings}),
+            })
+            .then(resp => resp.json())
+            .then()
 
         // //update DOM again here
         // console.log(animeData)
         console.log(anime.ratings)
-        // moreDetails(animeData)
+        moreDetails(anime)
         }  
           
 
@@ -137,7 +135,8 @@ function showRating(ratings) {
  let totalRatings = +ratings.one + +ratings.two + +ratings.three + +ratings.four + +ratings.five
 
  let averageRating = ((oneStars + twoStars + threeStars + fourStars + fiveStars)/totalRatings)
- return averageRating
+ let averageRatingFormated = averageRating.toFixed(2)
+ return averageRatingFormated
 }
 
 //Put at bottom,  DOMContentLoaded after HTML/CSS skeleton has been created and other JS functions work (Domcontentloaded acts like init() function)
