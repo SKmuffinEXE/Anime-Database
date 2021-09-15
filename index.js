@@ -1,7 +1,8 @@
 const BASE_URL = "http://localhost:3000/Anime"
 let i = 1;
 
-let testObj = {"five" : 2, "four": 1, "three": 3,"two": 1,"one": 3}
+let stars = document.getElementById('starRating')
+// let testObj = {"five" : 2, "four": 1, "three": 3,"two": 1,"one": 3}
 
 //make initial fetch function
 function getAnime(){
@@ -46,6 +47,19 @@ function moreDetails(animeData) {
     const description = document.getElementById('description')
     description.innerText = animeData.description
 
+    //rating system
+    const currentRating = document.getElementById('rating')
+    currentRating.innerText = `Rating: ${showRating(animeData.ratings)} Stars`
+    // console.log(showRating(animeData.ratings))
+
+    // let stars = document.getElementById('starRating')
+    console.log(animeData)
+    stars.addEventListener('submit', (event) =>
+    {
+        event.preventDefault()  
+        testSubmit(animeData)
+    })
+
     //foreach for to iterate through each character
     animeData.characters.forEach(character =>renderCharacters(character))
 
@@ -66,12 +80,18 @@ function renderCharacters(character){
 }
 
 //Add event listener for rating system
-const stars = document.getElementById("starRating")
-stars.addEventListener('submit', function(){showRating(ratings)})
+
+// let stars = document.getElementById('starRating')
+// stars.addEventListener('submit', () => showRating())
+
+function testSubmit(event, animeData){
+    // event.preventDefault()
+    console.log(animeData)
+}
 
 function showRating(ratings, event) {
- event.preventDefault()
-console.log("test")
+//  event.preventDefault()
+// console.log("test")
 
  let oneStars =  +ratings.one 
  let twoStars = +ratings.two *2
@@ -90,7 +110,8 @@ console.log("test")
 document.addEventListener("DOMContentLoaded", function(){
 
     //temp!!!!!
-    showRating(testObj)
+    // showRating(testObj)
+    
     getAnime()
-
+    
 })

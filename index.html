@@ -5,7 +5,7 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title> Anime Database </title>
-            <script src = "index.js"></script>
+            <script defer src = "index.js"></script>
             <!--Link CSS if we want to use it here or do it inline-->
         </head>
 
@@ -24,16 +24,18 @@
                     <p id = "rating"></p>
                     <p id = "description"></p>
                 <form id = "starRating"> 
-                    <input value = "1" id = "star1">
-                        <label for = "star1"> Rating: </label>
-                    <input value = "2" id = "star2" >
-                        <label for = "star2"></label>
-                    <input value = "3" id = "star3">
-                        <label for = "star3"> Rating: </label>
-                    <input value = "4" id = "star4">
-                        <label for = "star4"> Rating: </label>
-                    <input value = "5" id = "star5">
-                         <label for = "star5"> Rating: </label>
+                    <label for = "star1"> Rating: </label>
+                        <input value = "1" id = "star1">
+                        <input type="submit" value="Send"/>
+                    <!-- <label for = "star2">Rating:</label>
+                        <input value = "2" id = "star2" >
+                    <label for = "star3"> Rating: </label>    
+                        <input value = "3" id = "star3">
+                    <label for = "star4"> Rating: </label>
+                        <input value = "4" id = "star4">
+                    <label for = "star5"> Rating: </label>   
+                        <input value = "5" id = "star5">
+                     -->
                 </form>
                 
                     <div class = "characters">
