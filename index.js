@@ -1,7 +1,9 @@
 const BASE_URL = "http://localhost:3000/Anime"
 let i = 1;
 
-let stars = document.getElementById('starRating')
+const stars = document.getElementById('starRating')
+
+let singlePass = false
 // let testObj = {"five" : 2, "four": 1, "three": 3,"two": 1,"one": 3}
 
 //make initial fetch function
@@ -26,6 +28,7 @@ function renderAnime(animeData){
 //add click event listener
 //function () { moreDetails(animeData)} is a reference that is invoked only when click event occurs
     animeShow.addEventListener('click', function (){moreDetails(animeData)})
+    // stars.addEventListener('submit', (event) => submitRating(animeData, event))
 }
 
 function moreDetails(animeData) {
@@ -50,11 +53,17 @@ function moreDetails(animeData) {
     //rating system
     const currentRating = document.getElementById('rating')
     currentRating.innerText = `Rating: ${showRating(animeData.ratings)} Stars`
-    // console.log(showRating(animeData.ratings))
 
-    // let stars = document.getElementById('starRating')
-    //console.log(animeData)
-    stars.addEventListener('submit', (event) => submitRating(animeData, event))
+
+
+    //boolean in global scope, set to false, when dom loads, it's automatically false
+    //if false, add event listner, and set boolean true
+    if(singlePass === false){
+        stars.addEventListener('submit', (event) => submitRating(animeData, event))
+        singlePass = true
+        
+    }
+    
 
     //foreach for to iterate through each character
     animeData.characters.forEach(character =>renderCharacters(character))
@@ -109,9 +118,9 @@ function renderCharacters(character){
         //     .then()
 
         // //update DOM again here
-
+        console.log(animeData)
         console.log(animeData.ratings)
-        moreDetails(animeData)
+        // moreDetails(animeData)
         }  
           
 
