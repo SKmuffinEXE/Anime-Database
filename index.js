@@ -2,10 +2,6 @@ const BASE_URL = "http://localhost:3000/Anime"
 let i = 1;
 
 const stars = document.getElementById('starRating')
-
-let singlePass = false
-// let testObj = {"five" : 2, "four": 1, "three": 3,"two": 1,"one": 3}
-
 //make initial fetch function
 function getAnime(){
     fetch(BASE_URL)
@@ -16,7 +12,7 @@ function getAnime(){
 function renderAnime(animeData){
     const guide = document.getElementById('anime-container')
     const animeShow = document.createElement('div')
-//image
+// create image
     const splashImage = document.createElement('img')
     splashImage.src = animeData.image
     splashImage.alt = animeData.name
@@ -26,18 +22,14 @@ function renderAnime(animeData){
     animeShow.append(splashImage, title)
     guide.append(animeShow)
 //add click event listener
-//function () { moreDetails(animeData)} is a reference that is invoked only when click event occurs
     animeShow.addEventListener('click', function (){moreDetails(animeData)})
-    // stars.addEventListener('submit', (event) => submitRating(animeData, event))
+  
 }
 
 function moreDetails(animeData) {
     const title = document.getElementById('title')
     title.innerText = animeData.name
 
-    //commented out for the current state of code
-    // const img = document.getElementById('splash')
-    // img.src = animeData.image
     const detGenre = document.getElementById('genre')
     detGenre.innerText = `Genre: ${animeData.genre}`
 
@@ -45,19 +37,17 @@ function moreDetails(animeData) {
     episodes.innerText = `Episodes: ${animeData.episodes}`
 
     const detRelease = document.getElementById('release-date')
-    detRelease.innerText = animeData.releaseDate
+    detRelease.innerText = `Anime Release Date: ${animeData.releaseDate}`
 
     const description = document.getElementById('description')
     description.innerText = animeData.description
 
-    //rating system
+    //Use showRating function to update ratings output
     const currentRating = document.getElementById('rating')
     currentRating.innerText = `Rating: ${showRating(animeData.ratings)} Stars`
 
-
-
-    //boolean in global scope, set to false, when dom loads, it's automatically false
-    //if false, add event listner, and set boolean true
+ 
+    //.myParam used to set custom attribute to the stars HTML node with 'starRating id' and then assign to animeData object
     stars.myParam = animeData
     const enableButton = document.getElementById("disabled")
     enableButton.disabled = false
@@ -67,7 +57,7 @@ function moreDetails(animeData) {
     //foreach for to iterate through each character
     animeData.characters.forEach(character =>renderCharacters(character))
 }
-
+//To show character images when click event is fired
 function renderCharacters(character){
     const container = document.getElementById("characters")
     const charName = document.getElementById(`name${i}`)
@@ -81,21 +71,14 @@ function renderCharacters(character){
     }
 }
 
-//Add event listener for rating system
-
-// let stars = document.getElementById('starRating')
-// stars.addEventListener('submit', () => showRating())
-
-
+//Add form event listener for rating system; which is called on form submission (initialized under DOMContentLoaded event at bottom)
     function submitRating(event){
         event.preventDefault()  
-       // console.log(animeData.ratings)
-
-        //update information
-        // let ratings = animeData.ratings
+        
+        //assign anime variable to the attribute tied to form event target
         let anime = event.target.myParam
 
-        //let ratings be the object containing the shows ratings
+        
         //increment a rating by 1 depending on user input
         let result = +event.target.star1.value
         if(result === 1){anime.ratings.one += 1} 
@@ -103,12 +86,9 @@ function renderCharacters(character){
         if(result === 3){anime.ratings.three += 1}
         if(result === 4){anime.ratings.four += 1}
         if(result === 5){anime.ratings.five += 1} 
-        // console.log(event.target.myParam)
+      
 
-        //console.log(animeData.ratings)
-        // debugger
-
-        //send information to server
+        //send updated ratings to server to update via patch fetch request
         fetch(`${BASE_URL}/${anime.id}`, {method: 'PATCH',
             headers: {
                 'Content-type': 'application/json',
@@ -116,17 +96,16 @@ function renderCharacters(character){
             body: JSON.stringify({ratings: anime.ratings}),
             })
             .then(resp => resp.json())
-            .then()
+            .then(console.log("test"))
 
-        // //update DOM again here
-        // console.log(animeData)
+        console.log(anime)
         console.log(anime.ratings)
         moreDetails(anime)
         }  
           
-
+//Function to return formatted average ratings
 function showRating(ratings) {
- let oneStars =  +ratings.one 
+ let oneStars = +ratings.one 
  let twoStars = +ratings.two *2
  let threeStars = +ratings.three*3
  let fourStars = +ratings.four*4
@@ -135,15 +114,14 @@ function showRating(ratings) {
  let totalRatings = +ratings.one + +ratings.two + +ratings.three + +ratings.four + +ratings.five
 
  let averageRating = ((oneStars + twoStars + threeStars + fourStars + fiveStars)/totalRatings)
- let averageRatingFormated = averageRating.toFixed(2)
- return averageRatingFormated
+ let averageRatingFormatted = averageRating.toFixed(2)
+ return averageRatingFormatted
 }
 
 //Put at bottom,  DOMContentLoaded after HTML/CSS skeleton has been created and other JS functions work (Domcontentloaded acts like init() function)
 document.addEventListener("DOMContentLoaded", function(){
-    //temp!!!!!
-    // showRating(testObj)
     getAnime()
-    stars.addEventListener('submit', (event) => submitRating(event))
     
+    stars.addEventListener('submit', (event) => submitRating(event))
+
 })

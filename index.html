@@ -5,10 +5,7 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title> Anime Database </title>
-            <script defer src = "index.js"></script>
-            <!--Link CSS if we want to use it here or do it inline-->
         </head>
-
         <body>
            <header>
                 <div id = "anime-container">
@@ -25,18 +22,15 @@
                     <p id = "description"></p>
                 <form id = "starRating"> 
                     <label id = "whichShow"> Click an image so you can rate the show </label>
-                        <input value = "1" id = "star1">
-                        <input type="submit" id = "disabled" disabled value="Submit Rating"/>
-                    <!-- <label for = "star2">Rating:</label>
-                        <input value = "2" id = "star2" >
-                    <label for = "star3"> Rating: </label>    
-                        <input value = "3" id = "star3">
-                    <label for = "star4"> Rating: </label>
-                        <input value = "4" id = "star4">
-                    <label for = "star5"> Rating: </label>   
-                        <input value = "5" id = "star5">
-                     -->
-                </form>
+                    <select id = "star1">
+                        <option value = "1"> 1</option>
+                        <option value = "2"> 2</option>
+                        <option value = "3"> 3</option>
+                        <option value = "4"> 4</option>
+                        <option value = "5"> 5</option>    
+                    </select>
+                    <input type="submit" id = "disabled" disabled value="Submit Rating"/>
+                    </form>
                 
                     <div class = "characters">
                         <div id = "char1"> 
@@ -53,13 +47,8 @@
                         </div>
                     </div>
                 </div>
-          
             </section>
-            
-            <section>
-
-
-            </section>
+            <script src = "index.js"></script>
         </body>
 
     </html>
