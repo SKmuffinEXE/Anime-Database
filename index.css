@@ -1,25 +1,49 @@
 *{
-
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
+
+header {
+    padding: 0.5rem;
+
+    color:black;
+    background-color: white;
+}
+
 
 #anime-container{
-
+        display: flex;
+        overflow-x: auto;
+        margin: 1rem 0;  
 }
+
+
+#anime-container #splash {
+    flex: 0 1 auto;
+    height: 150px;
+    margin-right: 0.5rem;
+    cursor: pointer;
+  }
 
 .characters {
+    position: relative;
+}
+
+#char1 #img1 {
+
+
+}
+#char2 #img2 {
 
 }
 
-#img1 {
+#char3 #img3 {
 
 
-}
-#img2 {
-
+    
 }
 
-#img3{
 
-}
 
 
