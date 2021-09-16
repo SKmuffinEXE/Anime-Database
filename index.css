@@ -9,6 +9,7 @@ header {
 
     color:black;
     background-color: white;
+    font-size: 48px;
 }
 
 
@@ -16,30 +17,33 @@ header {
         display: flex;
         overflow-x: auto;
         margin: 1rem 0;  
+        text-align: center;
 }
 
 
-#anime-container #splash {
+#anime-container img {
     flex: 0 1 auto;
-    height: 150px;
+    height: 600px;
     margin-right: 0.5rem;
     cursor: pointer;
   }
 
 .characters {
+    display: flex;
+    flex: 0 1 auto;
     position: relative;
 }
 
-#char1 #img1 {
+#char1 img {
 
-
+    height: 600px;
 }
-#char2 #img2 {
-
+#char2 img {
+    height: 600px;
 }
 
-#char3 #img3 {
-
+#char3 img {
+height: 600px;
 
     
 }
