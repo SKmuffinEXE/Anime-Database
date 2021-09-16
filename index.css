@@ -2,17 +2,15 @@
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
+    background-color: grey
 }
 
 header {
     padding: 0.5rem;
-
-    color:black;
-    background-color: white;
+     color:black;
+    background-color:black;
     font-size: 48px;
 }
-
-
 
 #anime-container{
         display: flex;
@@ -45,6 +43,7 @@ header {
 
 #details{
     padding: 20px;
+    color: white
 }
 
 #det1{
@@ -52,3 +51,13 @@ header {
     /* padding: 10px; */
 }
 
+#disabled {
+
+    color:darkmagenta;
+}
+
+#star1 {
+color:white
+
+
+}
