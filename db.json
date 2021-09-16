@@ -59,6 +59,96 @@
           "image": "./image/characters/rohan.png"
         }
       ]
+    },
+    {
+      "id": 3,
+      "name": "K-on",
+      "image": "./image/anime/kon.jpg",
+      "genre": "Slice of Life",
+      "releaseDate": 2009,
+      "episodes": 39,
+      "description": "A fresh high school year always means much to come, and one of those things is joining a club. Being in a dilemma about which club to join, Yui Hirasawa stumbles upon and applies for the Light Music Club, which she misinterprets to be about playing simple instruments, such as castanets.",
+      "ratings": {
+        "five": 25,
+        "four": 3,
+        "three": 1,
+        "two": 0,
+        "one": 9
+      },
+      "characters": [
+        {
+          "name": "Yui Hirasawa",
+          "image": "./image/characters/Yui_Hirasawa.jpg"
+        },
+        {
+          "name": "Azusa Nakano",
+          "image": "./image/characters/Azusa_Nakano.png"
+        },
+        {
+          "name": "Mugi Tsumugi",
+          "image": "./image/characters/mugi_KON.jpg"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Fruits Basket",
+      "image": "./image/anime/fruitsBasket.jpg",
+      "genre": "Shoujo",
+      "releaseDate": "2001, remake: 2019",
+      "episodes": "26, remake: 66",
+      "description": "Tooru Honda has always been fascinated by the story of the Chinese Zodiac that her beloved mother told her as a child. However, a sudden family tragedy changes her life, and subsequent circumstances leave her all alone. Tooru is now forced to live in a tent, but little does she know that her temporary home resides on the private property of the esteemed Souma family. Stumbling upon their home one day, she encounters Shigure, an older Souma cousin, and Yuki, the 'prince' of her school. Tooru explains that she lives nearby, but the Soumas eventually discover her well-kept secret of being homeless when they see her walking back to her tent one night. Things start to look up for Tooru as they kindly offer to take her in after hearing about her situation, until she discovers the Souma family's well kept secret: whenever they are hugged by a member of the opposite sex, they transform into the animals of the Chinese Zodiac",
+      "ratings": {
+        "five": 12,
+        "four": 5,
+        "three": 2,
+        "two": 0,
+        "one": 3
+      },
+      "characters": [
+        {
+          "name": "Tohru Honda",
+          "image": "./image/characters/tohru.png"
+        },
+        {
+          "name": "Kyou Souma",
+          "image": "./image/characters/kyo.gif"
+        },
+        {
+          "name": "Yuki Souma",
+          "image": "./image/characters/Yuki_FB.jpg"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Tengen Toppa Gurren Lagann",
+      "image": "./image/anime/Gurren_Lagann.jpg",
+      "genre": "Shounen Mecha",
+      "releaseDate": 2007,
+      "episodes": 27,
+      "description": "Simon and Kamina were born and raised in a deep, underground village, hidden from the fabled surface. Kamina is a free-spirited loose cannon bent on making a name for himself, while Simon is a timid young boy with no real aspirations. One day while excavating the earth, Simon stumbles upon a mysterious object that turns out to be the ignition key to an ancient artifact of war, which the duo dubs Lagann. Using their new weapon, Simon and Kamina fend off a surprise attack from the surface with the help of Yoko Littner, a hot-blooded redhead wielding a massive gun who wanders the world above.",
+      "ratings": {
+        "five": 100,
+        "four": 5,
+        "three": 2,
+        "two": 0,
+        "one": 3
+      },
+      "characters": [
+        {
+          "name": "Simon",
+          "image": "./image/characters/Simon.png"
+        },
+        {
+          "name": "Kamina",
+          "image": "./image/characters/Kamina.png"
+        },
+        {
+          "name": "Yoko Littner",
+          "image": "./image/characters/Yoko.png"
+        }
+      ]
     }
   ]
 }
