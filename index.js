@@ -23,9 +23,7 @@ function renderAnime(animeData){
     guide.append(animeShow)
 //add click event listener
     animeShow.addEventListener('click', function (){moreDetails(animeData)})
-  
 }
-
 function moreDetails(animeData) {
     const title = document.getElementById('title')
     title.innerText = animeData.name
@@ -46,7 +44,6 @@ function moreDetails(animeData) {
     const currentRating = document.getElementById('rating')
     currentRating.innerText = `Rating: ${showRating(animeData.ratings)} Stars`
 
- 
     //.myParam used to set custom attribute to the stars HTML node with 'starRating id' and then assign to animeData object
     stars.myParam = animeData
     const enableButton = document.getElementById("disabled")

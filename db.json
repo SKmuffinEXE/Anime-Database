@@ -32,18 +32,18 @@
     },
     {
       "id": 2,
-      "name": "Jojo's Bizarre Adventure: Diamond is Unbreakable",
+      "name": "Jojo: Diamond is Unbreakable",
       "image": "./image/anime/jojo.jpg",
       "genre": "Shounen",
       "releaseDate": 2016,
       "episodes": 39,
       "description": "The year is 1999. Morioh, a normally quiet and peaceful town, has recently become a hotbed of strange activity. Aided by the power of Stands, four men will encounter danger at every street corner, as it is up to them to unravel the town's secrets, before another occurs.",
       "ratings": {
-        "five": 16,
+        "five": 17,
         "four": 3,
-        "three": 4,
-        "two": 8,
-        "one": 5
+        "three": 6,
+        "two": 9,
+        "one": 6
       },
       "characters": [
         {
@@ -70,7 +70,7 @@
       "description": "A fresh high school year always means much to come, and one of those things is joining a club. Being in a dilemma about which club to join, Yui Hirasawa stumbles upon and applies for the Light Music Club, which she misinterprets to be about playing simple instruments, such as castanets.",
       "ratings": {
         "five": 25,
-        "four": 3,
+        "four": 4,
         "three": 2,
         "two": 0,
         "one": 11
@@ -100,10 +100,10 @@
       "description": "Tooru Honda has always been fascinated by the story of the Chinese Zodiac that her beloved mother told her as a child. However, a sudden family tragedy changes her life, and subsequent circumstances leave her all alone. Tooru is now forced to live in a tent, but little does she know that her temporary home resides on the private property of the esteemed Souma family. Stumbling upon their home one day, she encounters Shigure, an older Souma cousin, and Yuki, the 'prince' of her school. Tooru explains that she lives nearby, but the Soumas eventually discover her well-kept secret of being homeless when they see her walking back to her tent one night. Things start to look up for Tooru as they kindly offer to take her in after hearing about her situation, until she discovers the Souma family's well kept secret: whenever they are hugged by a member of the opposite sex, they transform into the animals of the Chinese Zodiac",
       "ratings": {
         "five": 12,
-        "four": 5,
-        "three": 2,
+        "four": 8,
+        "three": 3,
         "two": 0,
-        "one": 3
+        "one": 4
       },
       "characters": [
         {
@@ -131,7 +131,7 @@
       "ratings": {
         "five": 100,
         "four": 6,
-        "three": 3,
+        "three": 4,
         "two": 0,
         "one": 5
       },
