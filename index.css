@@ -13,6 +13,7 @@ header {
 }
 
 
+
 #anime-container{
         display: flex;
         overflow-x: auto;
@@ -23,7 +24,7 @@ header {
 
 #anime-container img {
     flex: 0 1 auto;
-    height: 600px;
+    height: 400px;
     margin-right: 0.5rem;
     cursor: pointer;
   }
@@ -32,22 +33,22 @@ header {
     display: flex;
     flex: 0 1 auto;
     position: relative;
-}
-
-#char1 img {
-
-    height: 600px;
-}
-#char2 img {
-    height: 600px;
-}
-
-#char3 img {
-height: 600px;
-
+    border: 5px solid;
     
 }
 
+.characters img{
+    height: 600px;
+    margin: 10px 10px;
+    
+}
 
+#details{
+    padding: 20px;
+}
 
+#det1{
+    display:flex;
+    /* padding: 10px; */
+}
 
