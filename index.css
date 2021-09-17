@@ -7,23 +7,29 @@
 
 header {
     padding: 0.5rem;
-     color:black;
-    background-color:black;
+     color: white;
+    background-color: white;
     font-size: 48px;
 }
 
 #anime-container{
         display: flex;
         overflow-x: auto;
-        margin: 1rem 0;  
+        margin: 2rem 0;  
         text-align: center;
+        padding-left: 20px
+}
+
+img ~ h3 {
+    text-align: justify;
+    color: white
 }
 
 
 #anime-container img {
     flex: 0 1 auto;
     height: 400px;
-    margin-right: 0.5rem;
+    margin-right: 6rem;
     cursor: pointer;
   }
 
@@ -32,12 +38,12 @@ header {
     flex: 0 1 auto;
     position: relative;
     border: 5px solid;
-    
+    text-align: center;
 }
 
 .characters img{
     height: 600px;
-    margin: 10px 10px;
+    margin: 10px 100px;
     
 }
 
