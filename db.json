@@ -42,8 +42,8 @@
         "five": 17,
         "four": 5,
         "three": 10,
-        "two": 9,
-        "one": 6
+        "two": 11,
+        "one": 16
       },
       "characters": [
         {
@@ -71,9 +71,9 @@
       "ratings": {
         "five": 25,
         "four": 5,
-        "three": 2,
-        "two": 0,
-        "one": 11
+        "three": 3,
+        "two": 1,
+        "one": 13
       },
       "characters": [
         {
