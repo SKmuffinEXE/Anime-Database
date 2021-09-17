@@ -38,7 +38,6 @@ header {
 .characters img{
     height: 600px;
     margin: 10px 10px;
-    padding: 10px
     
 }
 
@@ -63,5 +62,6 @@ input[type ="submit"]:disabled {
 
 #star1:hover {
 color: darkmagenta
+
 
 }

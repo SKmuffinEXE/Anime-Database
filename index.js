@@ -85,7 +85,7 @@ function renderCharacters(character){
         if(result === 5){anime.ratings.five += 1} 
       
 
-        //send updated ratings to server to update via patch fetch request
+        //send updated ratings to server to update  & persist via patch fetch request
         fetch(`${BASE_URL}/${anime.id}`, {method: 'PATCH',
             headers: {
                 'Content-type': 'application/json',
